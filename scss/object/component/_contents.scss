@@ -1,0 +1,15 @@
+.c-contents{
+  padding: 0 20px;
+
+  @include breakpoint(pc){
+    width: 1020px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  &.is-narrow{
+    @include breakpoint(pc){
+      width: 770px;
+    }
+  }
+}

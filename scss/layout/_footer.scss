@@ -1,0 +1,161 @@
+.l-footer{
+  background-color: $color-pink;
+  margin-top: 60px;
+
+  @include breakpoint(pc){
+    margin-top: 120px;
+  }
+
+  &__inner{
+    padding: 30px 20px 40px;
+
+    @include breakpoint(pc){
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__main{
+    @include breakpoint(pc){
+      width: calc(100% - 580px);
+    }
+  }
+
+  &__logo{
+    display: block;
+    width: 120px;
+    margin: 0 0 15px;
+
+    @include breakpoint(pc){
+      width: 150px;
+    }
+
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__btns{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 30px;
+
+    @include breakpoint(pc){
+      display: block;
+    }
+
+    .c-button{
+      width: calc(50% - 12px);
+
+      @include breakpoint(pc){
+        width: 226px;
+        height: 46px;
+        font-size: 1.6rem;
+        margin-top: 20px;
+      }
+
+      span{
+        font-size: 1.4rem;
+
+        @include breakpoint(pc){
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  &__menu{
+    border-top: 1px solid $color-gray;
+
+    @include breakpoint(pc){
+      width: calc(100% - 430px);
+      width: 580px;
+      display: flex;
+      border-top: none;
+      padding: 20px 0 0;
+    }
+  }
+
+  &__block{
+    border-bottom: 1px solid $color-gray;
+    display: flex;
+    padding: 20px 10px;
+
+    @include breakpoint(pc){
+      width: 180px;
+      display: block;
+      border-bottom: none;
+      padding: 0;
+    }
+
+    & + .l-footer__block{
+      @include breakpoint(pc){
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__heading{
+    width: 100px;
+    font-size: 1.4rem;
+
+    @include breakpoint(pc){
+      width: 100%;
+      border-bottom: 1px solid $color-gray;
+      font-size: 1.6rem;
+      padding: 0 0 15px;
+    }
+  }
+
+  &__list{
+    width: calc(100% - 100px);
+
+    @include breakpoint(pc){
+      width: 100%;
+    }
+  }
+
+  &__item{
+
+    @include breakpoint(pc){
+      margin-top: 15px;
+    }
+
+    & + .l-footer__item{
+      margin-top: 15px;
+    }
+  }
+
+  &__link{
+    font-size: 1.2rem;
+
+    @include breakpoint(pc){
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__bottom{
+    margin: 40px 0 0;
+
+    @include breakpoint(pc){
+      width: 100%;
+    }
+  }
+
+  &__copy{
+    font-size: 1.2rem;
+    text-align: center;
+
+    @include breakpoint(pc){
+      text-align: right;
+    }
+  }
+}

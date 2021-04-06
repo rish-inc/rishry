@@ -1,0 +1,35 @@
+extends /_include/_layout.pug
+
+block title
+  title Rishry
+
+block body
+  div.c-contents
+    div.c-breadcrumb
+      ul.c-breadcrumb__list
+        li.c-breadcrumb__item
+          a(href="/").c-breadcrumb__link TOP
+        li.c-breadcrumb__item
+          span.c-breadcrumb__text お問い合わせ
+
+    h1.c-heading--lv1 お問い合わせ
+
+  div.c-contents.is-narrow
+    div.contact
+      form
+        div.c-block
+          h2.c-heading--lv3 氏名
+          input(type="text" placeholder="山田 太郎").c-input--text
+
+        div.c-block
+          h2.c-heading--lv3 メールアドレス
+          input(type="text" placeholder="contact@rishry.com").c-input--text.is-error
+          p.contact__error 入力してください
+
+        div.c-block
+          h2.c-heading--lv3 お問い合わせ内容
+          textarea().c-input--textarea
+
+        div.contact__bottom
+          a(href="").c-button.is-disabled.is-center: span 入力内容を確認する
+          input(type="submit" value="").contact__submit

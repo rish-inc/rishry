@@ -1,0 +1,250 @@
+extends /_include/_layout.pug
+
+block title
+  title Rishry
+
+block body
+  div.c-contents
+    div.c-breadcrumb
+      ul.c-breadcrumb__list
+        li.c-breadcrumb__item
+          a(href="/").c-breadcrumb__link TOP
+        li.c-breadcrumb__item
+          span.c-breadcrumb__text なにがしの商品一覧
+
+    h1.c-heading--lv1 なにがしの商品一覧
+
+    div.list
+      div.list__side
+        div.filter.js-filterBody
+          div.filter__inner
+            div.filter__block
+              ul.filter__links
+                li
+                  a(href="") コーデから探す
+                li
+                  a(href="") 古着から探す
+                li
+                  a(href="") ブランドから探す
+
+            div.filter__block
+              p.c-heading--lv3 ジャンル
+              ul.filter__checks
+                li
+                  input(type="checkbox" id="j01")
+                  label(for="j01") ジャンル名
+                li
+                  input(type="checkbox" id="j02")
+                  label(for="j02") ジャンル名
+                li
+                  input(type="checkbox" id="j03")
+                  label(for="j03") ジャンル名
+
+            div.filter__block
+              a(href="").c-button: span 絞り込み
+
+            div.filter__block
+              p.c-heading--lv3 性別
+              ul.filter__checks
+                li
+                  input(type="checkbox" id="s01")
+                  label(for="s01") レディース
+                li
+                  input(type="checkbox" id="s02")
+                  label(for="s02") メンズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+                li
+                  input(type="checkbox" id="s03")
+                  label(for="s03") キッズ
+
+
+      div.list__main
+        div.list-brand
+          h2.c-heading--lv2: span ブランド名
+          div.list-brand__img
+            img(src="https://via.placeholder.com/200x200").top-mv__img
+          p.list-brand__txt
+            | ブランドの説明が入ります。ブランドの説明が入ります。ブランドの説明が入ります。ブランドの説明が入ります。ブランドの説明が入ります。ブランドの説明が入ります。
+
+        div.list-header
+          p 999件中1〜100件を表示中
+          ul
+            li
+              a(href="") 新着順
+            li
+              a(href="") 価格順
+          a(href="#").c-button.js-filterBtn: span 絞り込む
+
+        div.list-main
+          ul.c-itemList
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+            li.c-itemList__item
+              a(href="detail.html").c-itemList__link
+                div.c-itemList__img
+                  img(src="https://via.placeholder.com/240x240" alt="")
+                p.c-itemList__name 商品名が入ります。商品名が入ります。商品名が入ります。
+                p.c-itemList__price 5,000円
+
+          div.c-pager
+            ul.c-pager__list
+              li.c-pager__item
+                a(href="").c-pager__link.is-current 1
+              li.c-pager__item
+                a(href="").c-pager__link 2
+              li.c-pager__item
+                a(href="").c-pager__link 3
+              li.c-pager__item
+                a(href="").c-pager__link 4
+              li.c-pager__item
+                a(href="").c-pager__link 5

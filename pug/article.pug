@@ -1,0 +1,43 @@
+extends /_include/_layout.pug
+
+block title
+  title Rishry
+
+block body
+  div.c-contents
+    div.c-breadcrumb
+      ul.c-breadcrumb__list
+        li.c-breadcrumb__item
+          a(href="/").c-breadcrumb__link TOP
+        li.c-breadcrumb__item
+          a(href="/news.html").c-breadcrumb__link お知らせ一覧
+        li.c-breadcrumb__item
+          span.c-breadcrumb__text 記事タイトル
+
+    h1.c-heading--lv1 サイト公開しました！（テスト）
+
+  div.c-contents.is-narrow
+    div.article
+      article.article__main
+        .
+          <div><p>よろしくお願いします。</p>
+          <meta charset="utf-8">
+          <p><span>テキストが入ります。テキストが入ります。<br></span>テキストが入ります。</p>
+          <p><a href="test">リンク</a></p>
+          <ul>
+          <li>リスト</li>
+          <li>リスト</li>
+          <li>リスト</li>
+          </ul>
+          <p>テキストが入ります。<strong>テキスト</strong>が入ります。</p>
+          <h1>見出し</h1>
+          <p><span>テキストが入ります。テキストが入ります。<br></span>テキストが入ります。</p>
+          <h2>見出し</h2>
+          <p><span>テキストが入ります。テキストが入ります。<br></span>テキストが入ります。</p>
+          <h3>見出し</h3></div>
+          <p><span>テキストが入ります。テキストが入ります。<br></span>テキストが入ります。</p>
+
+      div.article__bottom
+        a(href="/news.html").c-button: span お知らせ一覧に戻る
+
+

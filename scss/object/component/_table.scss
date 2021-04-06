@@ -1,0 +1,51 @@
+.c-table{
+  border: 1px solid $color-gray;
+
+  @include breakpoint(pc){
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: none;
+  }
+
+  dt{
+    background-color: #EEEEEE;
+    border-bottom: 1px solid $color-gray;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    min-height: 40px;
+    padding: 0 15px;
+    font-weight: normal;
+    line-height: 1.6;
+
+    @include breakpoint(pc){
+      display: block;
+      padding: 15px;
+      width: 150px;
+      border-right: 1px solid $color-gray;
+    }
+  }
+
+  dd{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    min-height: 40px;
+    padding: 15px;
+    line-height: 1.6;
+
+    @include breakpoint(pc){
+      width: calc(100% - 150px);
+      border-bottom: 1px solid $color-gray;
+      padding: 15px;
+    }
+
+    & + dt{
+      border-top: 1px solid $color-gray;
+
+      @include breakpoint(pc){
+        border-top: none;
+      }
+    }
+  }
+}

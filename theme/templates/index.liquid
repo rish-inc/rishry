@@ -1,10 +1,57 @@
-{% for product in collections.frontpage.products limit:4 %}
-  <div>
-    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-    {{ product.price | money }}
-    {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-    <a href="{{ product.url | within: collection }}">
-      <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-    </a>
-  </div>
-{% endfor %}
+<form class="l-header-search" action="/search" method="get" role="search">
+  <input class="c-input--text" placeholder="ブランド・フリーワードで探す" type="search" name="q" value="{{ search.terms | escape }}">
+  <button type="submit">search</button>
+</form>
+
+
+<div class="top-mv">
+  <div class="top-mv__item"><a class="top-mv__link" href=""><img class="top-mv__img" src="https://via.placeholder.com/1020x580"></a></div>
+</div>
+<div class="c-contents">
+  <section class="c-section">
+    <h2 class="c-heading--lv2 is-en"><span>New Arrival</span></h2>
+    <ul class="c-itemList">
+
+        {% comment %}
+        <div>
+          <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+          {{ product.price | money }}
+          {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+          <a href="{{ product.url | within: collection }}">
+            <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+          </a>
+        </div>
+        {% endcomment %}
+
+      {% for collection in collections %}
+        {% if collection.handle == 'all' %}
+          {% for product in collection.products limit:8 %}
+            <li class="c-itemList__item">
+              <a class="c-itemList__link" href="{{ product.url }}">
+                <div class="c-itemList__img"><img src="{{ product.featured_image.src | img_url: 'large' }}" alt=""></div>
+                <p class="c-itemList__name">{{ product.title }}</p>
+                <p class="c-itemList__price">{{ product.price | money }}</p>
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <a class="c-button is-center" href="/collections/all/"><span>more</span></a>
+  </section>
+
+
+  <section class="c-section">
+    <h2 class="c-heading--lv2 is-en"><span>News</span></h2>
+    <ul class="c-newsList">
+      {% for article in blogs['news'].articles | limit: 3 %}
+        <li class="c-newsList__item">
+          <a class="c-newsList__link" href="{{ article.url }}">
+            <span class="c-newsList__date">{{ article.created_at | date: "%Y.%m.%d" }}</span>
+            <p class="c-newsList__ttl">{{ article.title }}</p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

@@ -12,50 +12,17 @@
 // @import "_common.scss";
 // @import "./common/utility";
 
+// @import "./foundation/_reset.scss";
+// @import "./foundation/_mixin.scss";
+// @import "./foundation/_base.scss";
 
-html {
-    font-size: 100%;
-    font-family: 'Noto Sans JP';
-}
+@import "./foundation/_reset.scss";
+@import "./foundation/_mixin.scss";
+@import "./foundation/_base.scss";
+@import "./foundation/_slick.scss";
 
-body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    position: relative;
-}
-
-li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    outline: none;
-    vertical-align: top;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+@import "./layout/**";
+@import "./object/**";
 
 
 

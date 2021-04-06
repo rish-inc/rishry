@@ -1,5 +1,10 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+<!--
+<div class="c-contents">
+
+
 <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
 {% for image in product.images %}
   <a href="{{ image.src | img_url: 'large' }}">
@@ -27,3 +32,65 @@
   <button type="submit" name="add" id="AddToCart">Add to cart</button>
 </form>
 <div>{{ product.description }}</div>
+
+</div>
+-->
+
+<div class="c-contents">
+  <div class="c-breadcrumb">
+    <ul class="c-breadcrumb__list">
+      <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="/">TOP</a></li>
+      <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="/list.html">なにがしの商品一覧</a></li>
+      <li class="c-breadcrumb__item"><span class="c-breadcrumb__text">{{ product.title }}</span></li>
+    </ul>
+  </div>
+  <div class="detail">
+    <div class="detail-mv">
+      <div class="detail-mv__slider js-slider">
+        {% for image in product.images %}
+          <div class="detail-mv__slide">
+            <img class="detail-mv__img" src="{{ image.src | img_url: 'large' }}" alt="{{ image.alt | escape }}">
+          </div>
+        {% endfor %}
+      </div>
+      <ul class="detail-mv__thumbs">
+        {% for image in product.images %}
+          <li class="detail-mv__thumb">
+            <img class="detail-mv__img" src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="detail-main">
+      <h1 class="c-heading--lv1">{{ product.title }}</h1>
+      <p class="detail-main__id">商品ID：{{ product.id }}</p>
+      <p class="detail-main__price"><span>{{ current_variant.price | money }}</span><span>（税込）</span></p>
+      <p class="detail-main__text">{{ product.description }}</p>
+
+      <form action="/cart/add" method="post">
+        <div class="detail-main__btns">
+          <button class="c-button is-center" type="submit" name="add" id="AddToCart" data-add-to-cart>
+            <span>add cart</span>
+          </button>
+
+          <a class="c-button is-center is-strong" href=""><span>すぐに購入</span></a>
+
+<!--           <button type="submit" name="add" data-add-to-cart>
+            <span data-add-to-cart-text>add cart</span>
+          </button>
+ -->        </div>
+      </form>
+      {{ product.metafields.info.info }}
+
+      <!--
+      <div class="detail-main__btns">
+        <a class="c-button is-center" href=""><span>add cart</span></a>
+        <a class="c-button is-center is-strong" href=""><span>すぐに購入</span></a>
+      </div>
+      -->
+      <div class="detail-main__share">
+        <p>この商品をシェアする</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+{% paginate collection.products by 16 %}
+
+<!--   <ul>
+  {% for tag in collection.all_tags %}
+  <li><a href="/collections/all/{{ tag }}">#{{ tag }}</a></li>
+  {% endfor %}
+</ul>
+ -->
+
+<div class="c-contents">
+  <div class="c-breadcrumb">
+    <ul class="c-breadcrumb__list">
+      <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="/">TOP</a></li>
+      <li class="c-breadcrumb__item"><span class="c-breadcrumb__text">なにがしの商品一覧</span></li>
+    </ul>
+  </div>
+  <h1 class="c-heading--lv1">なにがしの商品一覧</h1>
+  <div class="list">
+    <div class="list__side">
+      {% include 'side-filter-menu' %}
+    </div>
+
+    <div class="list__main">
+      {% if collection.description != blank %}
+        <div class="list-brand">
+          <h2 class="c-heading--lv2"><span>{{ collection.title }}</span></h2>
+          <div class="list-brand__img"><img class="top-mv__img" src="{{ collection.image | img_url: 'large' }}"></div>
+          {% if collection.description != blank %}
+            <p class="list-brand__txt">{{ collection.description }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="list-header">
+        <p>999件中1〜100件を表示中</p>
+        <ul>
+          <li><a href="/collections/all/?sort_by=created-descending">新着順</a></li>
+          <li><a href="/collections/all/?sort_by=price-descending">価格順</a></li>
+        </ul>
+        <a class="c-button js-filterBtn" href="#"><span>絞り込む</span></a>
+      </div>
+      <div class="list-main">
+        <ul class="c-itemList">
+
+          {% for product in collection.products %}
+          <!-- {{product | json}} -->
+            <li class="c-itemList__item">
+              <a class="c-itemList__link" href="{{ product.url | within: collection }}">
+                <div class="c-itemList__img">
+                  <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"></div>
+              <p class="c-itemList__name">{{ product.title }}</p>
+              <p class="c-itemList__price">{{ product.price | money }}</p></a></li>
+          {% else %}
+            <p>no matches</p>
+          {% endfor %}
+        </ul>
+
+        {%- if paginate.pages > 1 -%}
+          {% include 'pagination', paginate: paginate %}
+        {%- endif -%}
+
+<!--         <div class="c-pager">
+          <ul class="c-pager__list">
+            <li class="c-pager__item"><a class="c-pager__link is-current" href="">1</a></li>
+            <li class="c-pager__item"><a class="c-pager__link" href="">2</a></li>
+            <li class="c-pager__item"><a class="c-pager__link" href="">3</a></li>
+            <li class="c-pager__item"><a class="c-pager__link" href="">4</a></li>
+            <li class="c-pager__item"><a class="c-pager__link" href="">5</a></li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endpaginate %}
+
+

@@ -1,0 +1,18 @@
+$color-pink: #FFEDEE;
+$color-pink-d: #FFDDDE;
+$color-gray: #CCC;
+
+$color-txt-gray: #707070;
+$color-txt-pink: #FF9A9A;
+
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500&display=swap);
+
+html{
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  color: #333;
+  font-weight: 400;
+}
+
+body{
+}

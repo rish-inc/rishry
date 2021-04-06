@@ -1,0 +1,36 @@
+.contact{
+
+  .c-heading--lv3{
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+
+    @include breakpoint(pc){
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__bottom{
+    margin-top: 30px;
+
+    @include breakpoint(pc){
+      margin-top: 60px;
+    }
+
+    .c-button{
+      span{
+        font-size: 1.5rem;
+
+        @include breakpoint(pc){
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  &__error{
+    color: $color-txt-pink;
+    font-size: 1.4rem;
+    margin-top: 10px;
+  }
+}

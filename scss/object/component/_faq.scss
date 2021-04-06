@@ -1,0 +1,91 @@
+.c-faq{
+  border-top: 1px solid $color-gray;
+
+  &__item{
+    border-bottom: 1px solid $color-gray;
+  }
+
+  &__ttl{
+    display: block;
+    font-size: 1.6rem;
+    padding: 15px 30px 15px 10px;
+    position: relative;
+    line-height: 1.4;
+
+    @include breakpoint(pc){
+      padding: 20px;
+    }
+
+    &.is-open{
+      &::after{
+        transform: rotate(135deg);
+        top: 24px;
+      }
+    }
+
+    &::after{
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-left: 1px solid $color-gray;
+      border-bottom: 1px solid $color-gray;
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      transform: rotate(-45deg);
+
+      @include breakpoint(pc){
+        display: none;
+      }
+    }
+  }
+
+  &__body{
+    display: none;
+    padding: 0 10px 15px;
+
+    @include breakpoint(pc){
+      display: block;
+      padding: 0 20px 30px;
+    }
+  }
+
+  &__text{
+    font-size: 1.4rem;
+    line-height: 1.7;
+  }
+}
+
+// .c-breadcrumb{
+//   display: none;
+
+//   @include breakpoint(pc){
+//     display: block;
+//     margin-top: 10px;
+//   }
+
+//   &__list{
+//     display: flex;
+//     font-size: 1.4rem;
+//     color: $color-txt-gray;
+//   }
+
+//   &__item{
+
+//     & + .c-breadcrumb__item{
+
+//       &::before{
+//         content: '>';
+//         display: inline-block;
+//         margin: 0 5px;
+//       }
+//     }
+//   }
+
+//   &__link{
+//     &:hover{
+//       text-decoration: underline;
+//     }
+//   }
+// }

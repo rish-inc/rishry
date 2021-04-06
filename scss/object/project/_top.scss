@@ -1,0 +1,24 @@
+.top-mv{
+  margin: 0 0 40px;
+
+  @include breakpoint(pc){
+    margin: 0 0 80px;
+  }
+
+  &__item{
+    @include breakpoint(pc){
+      width: 1020px;
+      margin: 0 auto;
+    }
+  }
+
+  &__link{
+    display: block;
+  }
+
+  &__img{
+    display: block;
+    width: 100%;
+  }
+}
+

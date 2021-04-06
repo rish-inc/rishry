@@ -1,0 +1,35 @@
+.c-pager{
+
+  &__list{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item{
+    padding: 0 5px;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-gray;
+    border-radius: 3px;
+    font-size: 1.6rem;
+    color: $color-txt-gray;
+
+    @include breakpoint(pc){
+      transition: background-color 0.2s;
+
+      &:hover{
+        background-color: $color-pink;
+      }
+    }
+
+    &.is-current{
+      background-color: $color-pink;
+    }
+  }
+}

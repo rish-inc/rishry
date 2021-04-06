@@ -1,0 +1,5 @@
+.l-wrap{
+  @include breakpoint(pc){
+    min-width: 1060px;
+  }
+}

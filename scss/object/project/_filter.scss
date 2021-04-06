@@ -1,0 +1,145 @@
+.filter{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(#000, 0.5);
+  padding: 30px 20px;
+  transition: 0.3s;
+
+  opacity: 0;
+  pointer-events: none;
+
+  @include breakpoint(pc){
+    display: block;
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  &.is-show{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__inner{
+    background-color: rgba(#fff, 0.95);
+    overflow-y: scroll;
+    height: 100%;
+    padding: 20px 15px;
+
+    @include breakpoint(pc){
+      overflow: visible;
+      height: auto;
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+
+  &__block{
+
+    & + .filter__block{
+      margin-top: 40px;
+    }
+
+    .c-button{
+      width: 100%;
+    }
+  }
+
+  &__links{
+    border-top: 1px solid $color-gray;
+
+    li{
+      border-bottom: 1px solid $color-gray;
+    }
+
+    a{
+      display: block;
+      padding: 15px 10px;
+      font-size: 1.6rem;
+      position: relative;
+
+      @include breakpoint(pc){
+        transition: background-color 0.3s;
+
+        &:hover{
+          background-color: $color-pink;
+        }
+      }
+
+      &::before{
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-bottom: 1px solid $color-gray;
+        border-right: 1px solid $color-gray;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -4px;
+      }
+    }
+  }
+
+  &__checks{
+    li{
+
+      & + li{
+        margin-top: 5px;
+      }
+    }
+
+    input{
+      display: none;
+
+      &:checked{
+        & + label{
+          &::after{
+            content: '';
+            display: block;
+            width: 14px;
+            height: 8px;
+            border-left: 2px solid $color-txt-pink;
+            border-bottom: 2px solid $color-txt-pink;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 1px;
+            left: 1px;
+          }
+        }
+      }
+    }
+
+    label{
+      display: block;
+      font-size: 1.6rem;
+      position: relative;
+      padding: 0 0 0 20px;
+
+      @include breakpoint(pc){
+        padding: 0 0 0 25px;
+      }
+
+      &::before{
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border: 1px solid $color-gray;
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+

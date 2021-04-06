@@ -3,12 +3,30 @@
   {% assign number_of_comments = article.comments_count %}
 {% endif %}
 
-<h1>{{ article.title }}</h1>
+{% comment %}
+
 {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
 {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
 {{ article.author }} @ {{ article.created_at }}
 
-<div>{{ article.content }}</div>
+{% endcomment %}
+
+<div class="c-contents">
+
+  <h1 class="c-heading--lv1">{{ article.title }}</h1>
+
+  <div class="c-contents is-narrow">
+    <div class="article">
+      <article class="article__main">
+        {{ article.content }}
+      </article>
+    </div>
+  </div>
+
+  <!--<div class="article__bottom"><a class="c-button" href="/blogs/news/"><span>お知らせ一覧に戻る</span></a></div>-->
+
+</div>
+
 {% if blog.comments_enabled? %}
   <h2>{{ number_of_comments }} comments</h2>
   {% paginate article.comments by 5 %}

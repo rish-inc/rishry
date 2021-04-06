@@ -1,0 +1,68 @@
+extends /_include/_layout.pug
+
+block title
+  title Rishry
+
+block body
+  div.c-contents
+    div.c-breadcrumb
+      ul.c-breadcrumb__list
+        li.c-breadcrumb__item
+          a(href="/").c-breadcrumb__link TOP
+        li.c-breadcrumb__item
+          span.c-breadcrumb__text カート
+
+    h1.c-heading--lv1 カートの確認
+
+    div.cart
+      div.cart__main
+        ul.cart-list
+          li.cart-list__item
+            div.cart-list__img
+              img(src="https://via.placeholder.com/150x150")
+            div.cart-list__body
+              p.cart-list__name 商品名が入ります。商品名が入ります。
+              p.cart-list__info
+                | サイズ：L
+                br
+                | コンディション：A
+              p.cart-list__price 10,000円
+              a(href="#").cart-list__delete 削除
+          li.cart-list__item
+            div.cart-list__img
+              img(src="https://via.placeholder.com/150x150")
+            div.cart-list__body
+              p.cart-list__name 商品名が入ります。商品名が入ります。
+              p.cart-list__info
+                | サイズ：L
+                br
+                | コンディション：A
+              p.cart-list__price 10,000円
+              a(href="#").cart-list__delete 削除
+          li.cart-list__item
+            div.cart-list__img
+              img(src="https://via.placeholder.com/150x150")
+            div.cart-list__body
+              p.cart-list__name 商品名が入ります。商品名が入ります。
+              p.cart-list__info
+                | サイズ：L
+                br
+                | コンディション：A
+              p.cart-list__price 10,000円
+              a(href="#").cart-list__delete 削除
+
+      div.cart__side
+        span
+        dl.cart__price
+          dt 小計
+          dd 10,000円
+          dt 送料
+          dd 500円
+          dt 手数料
+          dd 500円
+          dt 割引
+          dd.is-pink -1,000円
+          dt 合計
+          dd 10,000円
+        a(href="").c-button.is-center: span 購入手続きへ
+

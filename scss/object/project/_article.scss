@@ -1,0 +1,320 @@
+.article{
+
+  &__main{
+
+    * + *{
+      margin-top: 20px;
+
+      @include breakpoint(pc){
+        margin-top: 40px;
+      }
+    }
+
+    p{
+      font-size: 1.6rem;
+      line-height: 1.4;
+
+      @include breakpoint(pc){
+        line-height: 1.8;
+      }
+
+      a{
+        color: $color-txt-pink;
+        text-decoration: underline;
+      }
+    }
+
+
+    li{
+      font-size: 1.6rem;
+      line-height: 1.4;
+
+      & + li{
+        margin-top: 10px;
+      }
+    }
+
+    ul{
+      padding: 0 0 0 20px;
+
+      li{
+        list-style: disc;
+      }
+    }
+
+    h1{
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 1.4;
+      border-bottom: 3px solid $color-pink-d;
+      padding: 5px 0;
+
+      @include breakpoint(pc){
+        font-size: 2.4rem;
+        border-bottom-width: 5px;
+        padding: 0 0 10px;
+        margin-bottom: -20px;
+      }
+    }
+
+    h2{
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 1.4;
+      border-left: 3px solid $color-pink-d;
+      padding: 3px 5px;
+
+      @include breakpoint(pc){
+        font-size: 2rem;
+        border-left-width: 5px;
+        padding: 5px 10px;
+        margin-bottom: -20px;
+      }
+    }
+
+    h3{
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1.4;
+
+      @include breakpoint(pc){
+        font-size: 2rem;
+        margin-bottom: -20px;
+      }
+    }
+  }
+
+  &__bottom{
+    border-top: 1px solid $color-gray;
+    margin: 30px 0 0;
+    padding: 30px 0 0;
+
+    @include breakpoint(pc){
+      margin: 60px 0 0;
+      padding: 60px 0 0;
+    }
+
+    .c-button{
+      margin-left: auto;
+      margin-right: auto;
+
+      span{
+        font-size: 1.6rem;
+
+        @include breakpoint(pc){
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+
+// .cart{
+
+//   @include breakpoint(pc){
+//     display: flex;
+//     align-items: flex-start;
+//   }
+
+//   &__main{
+//     border: 1px solid $color-gray;
+//     padding: 30px 20px;
+
+//     @include breakpoint(pc){
+//       width: calc(100% - 400px);
+//       border: none;
+//       padding: 0 35px 0 0;
+//     }
+//   }
+
+//   &__side{
+//     position: relative;
+//     border: 1px solid $color-gray;
+//     padding: 30px 20px;
+//     margin-top: 65px;
+
+//     @include breakpoint(pc){
+//       width: 400px;
+//       margin-top: 0;
+//       padding: 30px 40px 40px;
+//     }
+
+//     > span{
+//       display: block;
+//       width: 100px;
+//       height: 1px;
+//       background-color: $color-gray;
+//       position: absolute;
+//       top: -50px;
+//       left: 50%;
+//       margin-left: -50px;
+
+//       @include breakpoint(pc){
+//         display: none;
+//       }
+
+//       &::before{
+//         content: '';
+//         display: block;
+//         width: 60px;
+//         height: 1px;
+//         background-color: $color-gray;
+//         position: absolute;
+//         top: 0px;
+//         left: 50%;
+//         margin-left: -51px;
+//         transform: rotate(30deg);
+//         transform-origin: top left;
+//       }
+
+//       &::after{
+//         content: '';
+//         display: block;
+//         width: 60px;
+//         height: 1px;
+//         background-color: $color-gray;
+//         position: absolute;
+//         top: 0px;
+//         left: 50%;
+//         margin-left: -9px;
+//         transform: rotate(-30deg);
+//         transform-origin: top right;
+//       }
+//     }
+
+//     &::before{
+//       content: '';
+//       display: block;
+//       width: 100px;
+//       height: 30px;
+//       border-top: 30px solid $color-pink;
+//       border-left: 50px solid transparent;
+//       border-right: 50px solid transparent;
+//       position: absolute;
+//       top: -43px;
+//       left: 50%;
+//       margin-left: -50px;
+
+//       @include breakpoint(pc){
+//         display: none;
+//       }
+//     }
+//   }
+
+//   &__price{
+//     display: flex;
+//     flex-wrap: wrap;
+//     font-size: 1.6rem;
+//     margin-bottom: 20px;
+
+//     dt{
+//       width: 50%;
+//       text-align: left;
+//       font-weight: normal;
+//       border-top: 1px dashed $color-gray;
+//       padding: 15px 0;
+//     }
+
+//     dd{
+//       width: 50%;
+//       text-align: right;
+//       border-top: 1px dashed $color-gray;
+//       padding: 15px 0;
+
+//       &.is-pink{
+//         color: $color-txt-pink;
+//       }
+//     }
+//   }
+
+//   .c-button{
+//     span{
+//       font-size: 1.5rem;
+//     }
+//   }
+// }
+
+// .cart-list{
+
+//   &__item{
+//     display: flex;
+//     position: relative;
+//     padding: 0 0 30px;
+
+//     & + .cart-list__item{
+//       padding-top: 20px;
+//       border-top: 1px solid $color-gray;
+
+//       @include breakpoint(pc){
+//         padding-top: 30px;
+//       }
+//     }
+//   }
+
+//   &__img{
+//     width: 100px;
+
+//     @include breakpoint(pc){
+//       width: 150px;
+//     }
+
+//     img{
+//       display: block;
+//       width: 100%;
+//     }
+//   }
+
+//   &__body{
+//     width: calc(100% - 100px);
+//     padding: 0 0 0 15px;
+
+//     @include breakpoint(pc){
+//       width: calc(100% - 150px);
+//       padding: 0 0 0 30px;
+//     }
+//   }
+
+//   &__name{
+//     font-size: 1.6rem;
+//     line-height: 1.6;
+//   }
+
+//   &__info{
+//     margin-top: 10px;
+//     font-size: 1.4rem;
+//     line-height: 1.6;
+
+//     @include breakpoint(pc){
+//       margin-top: 15px;
+//     }
+//   }
+
+//   &__price{
+//     font-size: 1.8rem;
+//     margin-top: 10px;
+
+//     @include breakpoint(pc){
+//       margin-top: 15px;
+//     }
+//   }
+
+//   &__delete{
+//     position: absolute;
+//     bottom: 30px;
+//     right: 0;
+//     font-size: 1.4rem;
+//     text-decoration: underline;
+//     color: $color-txt-gray;
+
+//     @include breakpoint(pc){
+//       bottom: auto;
+//       top: 50%;
+//       margin-top: -0.5em;
+
+//       &:hover{
+//         text-decoration: none;
+//       }
+//     }
+//   }
+// }

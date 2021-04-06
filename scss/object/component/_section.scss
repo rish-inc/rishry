@@ -1,0 +1,16 @@
+.c-section{
+  margin-bottom: 60px;
+
+  @include breakpoint(pc){
+    margin-bottom: 90px;
+  }
+
+  & + .c-section{
+    margin-top: 60px;
+
+    @include breakpoint(pc){
+      margin-top: 90px;
+    }
+  }
+}
+
