@@ -1,3 +1,5 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .c-pager{
 
   &__list{
@@ -15,21 +17,21 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    border: 1px solid $color-gray;
+    border: 1px solid variable.$color-gray;
     border-radius: 3px;
     font-size: 1.6rem;
-    color: $color-txt-gray;
+    color: variable.$color-txt-gray;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       transition: background-color 0.2s;
 
       &:hover{
-        background-color: $color-pink;
+        background-color: variable.$color-pink;
       }
     }
 
     &.is-current{
-      background-color: $color-pink;
+      background-color: variable.$color-pink;
     }
   }
 }

@@ -1,0 +1,48 @@
+<!-- <h1>{{ page.title }}</h1>
+{% form 'contact' %}
+  {% if form.posted_successfully? %} Thank you for your contact {% endif %}
+  {{ form.errors | default_errors }}
+  <label for="ContactFormName">name</label>
+  <input type="text" id="ContactFormName" name="contact[name]">
+  <label for="ContactFormEmail">email</label>
+  <input type="email" id="ContactFormEmail" name="contact[email]">
+  <label for="ContactFormPhone">phone</label>
+  <input type="tel" id="ContactFormPhone" name="contact[phone]">
+  <label for="ContactFormMessage">message</label>
+  <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
+  <input type="submit" value="send">
+{% endform %}
+ -->
+<form class="l-header-search">
+  <input class="c-input--text" type="text" placeholder="ブランド・フリーワードで探す">
+  <input type="submit" value="">
+</form>
+
+<div class="c-contents">
+  {% include 'rishry-breadcrumbs' %}
+  <h1 class="c-heading--lv1">お問い合わせ</h1>
+</div>
+
+<div class="c-contents is-narrow">
+  <div class="contact">
+    {% form 'contact' %}
+    <form>
+      <div class="c-block">
+        <h2 class="c-heading--lv3">氏名</h2>
+        <input class="c-input--text" type="text" placeholder="山田 太郎" id="ContactFormName" name="contact[name]">
+      </div>
+      <div class="c-block">
+        <h2 class="c-heading--lv3">メールアドレス</h2>
+        <input class="c-input--text" placeholder="contact@rishry.com" type="email" id="ContactFormEmail" name="contact[email]">
+        <!-- <p class="contact__error">入力してください</p> -->
+      </div>
+      <div class="c-block">
+        <h2 class="c-heading--lv3">お問い合わせ内容</h2>
+        <textarea class="c-input--textarea" id="ContactFormMessage" name="contact[body]"></textarea>
+      </div>
+      <div class="contact__bottom"><a class="c-button is-disabled is-center" href="#"><span>入力内容を確認する</span></a>
+        <input class="contact__submit" type="submit" value="">
+      </div>
+    {% endform %}
+  </div>
+</div>

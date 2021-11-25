@@ -1,5 +1,7 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .l-header{
-  background-color: $color-pink;
+  background-color: variable.$color-pink;
 
   &__inner{
     display: flex;
@@ -9,7 +11,7 @@
     padding: 0 10px;
     position: relative;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: block;
       height: 130px;
       padding: 0 50px;
@@ -19,7 +21,7 @@
   &__lead{
     display: none;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: block;
       padding: 15px 0 0;
       font-size: 1.2rem;
@@ -33,7 +35,7 @@
     height: 40px;
     position: relative;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: none;
     }
 
@@ -88,7 +90,7 @@
     display: block;
     width: 90px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 150px;
     }
 
@@ -107,7 +109,7 @@
     background-size: 21px;
     background-position: center;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: none;
     }
   }
@@ -115,7 +117,7 @@
   &__menu{
     display: none;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: block;
       position: absolute;
       top: 20px;
@@ -132,7 +134,7 @@
     width: 100%;
     z-index: 100;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: block !important;
       background-color: transparent;
       top: auto;
@@ -146,7 +148,7 @@
   &__search{
     display: none;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: block;
       position: absolute;
       width: 250px;
@@ -178,9 +180,9 @@
 .l-header-search{
   padding: 20px;
   position: relative;
-  border-bottom: 1px solid $color-gray;
+  border-bottom: 1px solid variable.$color-gray;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     display: none;
   }
 

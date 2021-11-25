@@ -1,19 +1,21 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .list{
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     display: flex;
     flex-wrap: wrap;
   }
 
   &__main{
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: calc(100% - 200px);
       padding: 0 0 0 40px;
     }
   }
 
   &__side{
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 200px;
     }
   }
@@ -24,7 +26,7 @@
   flex-wrap: wrap;
   margin: 0 0 30px;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     display: block;
     margin: 0 0 60px;
     padding: 0 0 0 230px;
@@ -39,7 +41,7 @@
     span{
       font-size: 2rem;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         font-size: 2.8rem;
       }
     }
@@ -48,7 +50,7 @@
   &__img{
     width: 100px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 200px;
       position: absolute;
       top: 0;
@@ -67,7 +69,7 @@
     font-size: 1.4rem;
     line-height: 1.7;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       padding: 0;
       font-size: 1.6rem;
       width: 100%;
@@ -79,21 +81,21 @@
   position: relative;
   margin: 0 0 20px;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     display: flex;
     justify-content: space-between;
   }
 
   p{
     font-size: 1.4rem;
-    color: $color-txt-gray;
+    color: variable.$color-txt-gray;
   }
 
   ul{
     display: flex;
     margin-top: 5px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin-top: 0;
     }
 
@@ -102,20 +104,20 @@
       padding: 2px 0;
 
       & + li{
-        border-left: 1px solid $color-gray;
+        border-left: 1px solid variable.$color-gray;
         padding-left: 5px;
         margin-left: 5px;
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
           padding-left: 10px;
           margin-left: 10px;
         }
       }
 
       a{
-        color: $color-txt-gray;
+        color: variable.$color-txt-gray;
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
 
           &:hover{
             text-decoration: underline;
@@ -131,7 +133,7 @@
     right: 0;
     width: 110px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: none;
     }
 

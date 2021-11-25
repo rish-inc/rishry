@@ -1,9 +1,11 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .l-navi{
 
   &__list{
     padding: 20px 40px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: flex;
       padding: 0;
     }
@@ -12,9 +14,9 @@
   &__item{
 
     & + .l-navi__item{
-      border-top: 1px solid $color-gray;
+      border-top: 1px solid variable.$color-gray;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         border-top: none;
         margin-left: 15px;
       }
@@ -26,7 +28,7 @@
     font-size: 1.6rem;
     padding: 20px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       padding: 0;
       transition: opacity 0.2s;
 
@@ -37,13 +39,13 @@
   }
 
   &__menu{
-    background-color: $color-pink;
+    background-color: variable.$color-pink;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 25px 0;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: none;
     }
 

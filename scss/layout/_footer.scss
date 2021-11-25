@@ -1,15 +1,17 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .l-footer{
-  background-color: $color-pink;
+  background-color: variable.$color-pink;
   margin-top: 60px;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     margin-top: 120px;
   }
 
   &__inner{
     padding: 30px 20px 40px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       max-width: 1060px;
       margin: 0 auto;
       padding: 30px 20px;
@@ -20,7 +22,7 @@
   }
 
   &__main{
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: calc(100% - 580px);
     }
   }
@@ -30,7 +32,7 @@
     width: 120px;
     margin: 0 0 15px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 150px;
     }
 
@@ -45,14 +47,14 @@
     justify-content: space-between;
     margin: 0 0 30px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: block;
     }
 
     .c-button{
       width: calc(50% - 12px);
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         width: 226px;
         height: 46px;
         font-size: 1.6rem;
@@ -62,7 +64,7 @@
       span{
         font-size: 1.4rem;
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
           font-size: 1.6rem;
         }
       }
@@ -70,9 +72,9 @@
   }
 
   &__menu{
-    border-top: 1px solid $color-gray;
+    border-top: 1px solid variable.$color-gray;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: calc(100% - 430px);
       width: 580px;
       display: flex;
@@ -82,11 +84,11 @@
   }
 
   &__block{
-    border-bottom: 1px solid $color-gray;
+    border-bottom: 1px solid variable.$color-gray;
     display: flex;
     padding: 20px 10px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 180px;
       display: block;
       border-bottom: none;
@@ -94,7 +96,7 @@
     }
 
     & + .l-footer__block{
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         margin-left: 20px;
       }
     }
@@ -104,9 +106,9 @@
     width: 100px;
     font-size: 1.4rem;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 100%;
-      border-bottom: 1px solid $color-gray;
+      border-bottom: 1px solid variable.$color-gray;
       font-size: 1.6rem;
       padding: 0 0 15px;
     }
@@ -115,14 +117,14 @@
   &__list{
     width: calc(100% - 100px);
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 100%;
     }
   }
 
   &__item{
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin-top: 15px;
     }
 
@@ -134,7 +136,7 @@
   &__link{
     font-size: 1.2rem;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
 
       &:hover{
         text-decoration: underline;
@@ -145,7 +147,7 @@
   &__bottom{
     margin: 40px 0 0;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 100%;
     }
   }
@@ -154,7 +156,7 @@
     font-size: 1.2rem;
     text-align: center;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       text-align: right;
     }
   }

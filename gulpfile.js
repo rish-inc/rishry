@@ -1,19 +1,29 @@
 const { task, src, dest, watch, series, parallel } = require('gulp');
 
 //scss
-const sass = require('gulp-sass');
-const plumber = require("gulp-plumber");    // エラーが発生しても強制終了させない
-const notify = require("gulp-notify");      // エラー発生時のアラート出力
-const postcss = require("gulp-postcss");    // PostCSS利用
-const cssnext = require("postcss-cssnext")  // CSSNext利用
-const cleanCSS = require("gulp-clean-css"); // 圧縮
-const rename = require("gulp-rename");      // ファイル名変更
+const sass       = require('gulp-sass')(require('sass'));
+const plumber    = require("gulp-plumber");    // エラーが発生しても強制終了させない
+const notify     = require("gulp-notify");      // エラー発生時のアラート出力
+const postcss    = require("gulp-postcss");    // PostCSS利用
+const cssnext    = require("postcss-cssnext")  // CSSNext利用
+const cleanCSS   = require("gulp-clean-css"); // 圧縮
+const rename     = require("gulp-rename");      // ファイル名変更
 const sourcemaps = require("gulp-sourcemaps");  // ソースマップ作成
-const mqpacker = require('css-mqpacker');     //メディアクエリをまとめる
-const sassGlob = require("gulp-sass-glob");
-const pug = require("gulp-pug");
+const mqpacker   = require('css-mqpacker');     //メディアクエリをまとめる
+const sassGlob   = require('gulp-sass-glob-use-forward');
+const cached     = require('gulp-cached');
+const minimist   = require( 'minimist' );
+const pug        = require("gulp-pug");
 
 const browsersync = require("browser-sync").create();
+
+const options = minimist( process.argv.slice( 2 ), {
+  string: 'path',
+  default: {
+    path: 'http://127.0.0.1:9292' // 引数の初期値
+  }
+});
+
 
 //js babel
 // const babel = require("gulp-babel");
@@ -48,24 +58,34 @@ const srcPath = {
 //出力先パス
 const destPath = {
  html: 'htdocs/',
- css: 'theme/assets/',
+//  css: 'theme/assets/',
+ css: 'theme_export__rishry-com-boost-commerce-live-theme-with-filter-search-1__25NOV2021-0357pm/assets/',
  css2: 'htdocs/assets/css/',
  js: 'dist/js/',
  img: 'dist/img/'
 }
 
+// const server = () => {
+//   return browsersync.init({
+//     server: {
+//       baseDir: "htdocs"
+//     }
+//   });
+// }
+
+// const reload = () => {
+//   return browsersync.reload();
+// }
+
 const server = () => {
   return browsersync.init({
-    server: {
-      baseDir: "htdocs"
-    }
+		notify: true
   });
 }
- 
 const reload = (done) => {
   browsersync.reload();
   done();
-};
+}
 
 //pug
 const compilePug = () => {
@@ -86,14 +106,16 @@ const compileScssShopify = () => {
   .pipe(sassGlob())
   // .pipe(sourcemaps.init())//gulp-sourcemapsを初期化
   .pipe(plumber({errorHandler: notify.onError('Error:<%= error.message %>')}))
+  .pipe( cached( 'scss' ) )
   .pipe(sass({ outputStyle: 'expanded' }))
   // .pipe(postcss([mqpacker()])) // メディアクエリを圧縮
   .pipe(postcss([cssnext(browsers)]))//cssnext
   // .pipe(sourcemaps.write('/maps'))  //ソースマップの出力
   .pipe(rename({
-    extname: '.css.liquid' //.min.cssの拡張子にする
+    extname: '.css.liquid'
   }))
-  .pipe(dest('theme/assets/'))         //コンパイル先
+  // .pipe( gulp.dest( 'theme/assets/' ) );
+  .pipe(dest(destPath.css))         //コンパイル先
   // .pipe(cleanCSS()) // CSS圧縮
 }
 
@@ -103,11 +125,13 @@ const compileScss = () => {
   .pipe(sassGlob())
   // .pipe(sourcemaps.init())//gulp-sourcemapsを初期化
   .pipe(plumber({errorHandler: notify.onError('Error:<%= error.message %>')}))
+  .pipe( cached( 'scss' ) )
   .pipe(sass({ outputStyle: 'expanded' }))
   // .pipe(postcss([mqpacker()])) // メディアクエリを圧縮
   .pipe(postcss([cssnext(browsers)]))//cssnext
+  .pipe( rename( { sass: true } ) )
   // .pipe(sourcemaps.write('/maps'))  //ソースマップの出力
-  .pipe(dest('htdocs/assets/'))         //コンパイル先
+  .pipe(dest('./htdocs/assets/'))         //コンパイル先
   // .pipe(cleanCSS()) // CSS圧縮
 }
   
@@ -117,12 +141,16 @@ const compileScss = () => {
 // }
 
 const watchFile = () => {
-  watch('./scss/**/*.scss', series(compileScss, reload));
+  watch('./scss/**/*.scss', series( compileScssShopify, reload ) );
+  // watch('./scss/**/*.scss', series(compileScss, reload));
   watch('./pug/**/*.pug', series(compilePug, reload));
 }
 
 // ローカル開発 -> gulp
-exports.default = parallel(compileScss, watchFile, server);
+// exports.default = parallel(compileScss, compileScssShopify, watchFile, server);
+// exports.default = parallel( compileScssShopify, watchFile, server );
+exports.default = series( compileScssShopify, watchFile, server );
+// exports.default = parallel( compileScss, watchFile, server );
 
 // shopify用にコンパイル -> gulp build
 exports.build = series(compileScssShopify);

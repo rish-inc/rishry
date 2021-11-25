@@ -1,21 +1,23 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .c-newsList{
-  border-top: 1px dashed $color-gray;
+  border-top: 1px dashed variable.$color-gray;
 
   &__item{
-    border-bottom: 1px dashed $color-gray;
+    border-bottom: 1px dashed variable.$color-gray;
   }
 
   &__link{
     display: block;
     padding: 15px 0;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: flex;
       padding: 20px;
       transition: background-color 0.2s;
 
       &:hover{
-        background-color: rgba($color-pink, 0.3);
+        background-color: rgba(variable.$color-pink, 0.3);
       }
     }
   }
@@ -23,7 +25,7 @@
   &__date{
     font-size: 1.2rem;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       font-size: 1.6rem;
       width: 160px;
     }
@@ -37,7 +39,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       font-size: 1.6rem;
       width: calc(100% - 160px);
       margin: 0;

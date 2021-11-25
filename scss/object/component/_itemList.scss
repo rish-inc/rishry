@@ -1,9 +1,11 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .c-itemList{
   display: flex;
   flex-wrap: wrap;
   margin: 0 -10px;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     margin: 0 -10px -10px;
   }
 
@@ -12,7 +14,7 @@
     padding: 0 10px;
     margin: 0 0 20px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       width: 25%;
       margin: 0 0 40px;
     }
@@ -21,7 +23,7 @@
   &__link{
     display: block;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       transition: opacity 0.2s;
 
       &:hover{
@@ -44,7 +46,7 @@
     line-height: 1.5;
     margin: 0 0 5px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       font-size: 1.4rem;
     }
   }
@@ -52,7 +54,7 @@
   &__price{
     font-size: 1.6rem;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       font-size: 1.8rem;
     }
   }

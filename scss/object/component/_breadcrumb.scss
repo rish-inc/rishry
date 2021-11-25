@@ -1,7 +1,9 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .c-breadcrumb{
   display: none;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     display: block;
     margin-top: 10px;
   }
@@ -9,7 +11,7 @@
   &__list{
     display: flex;
     font-size: 1.4rem;
-    color: $color-txt-gray;
+    color: variable.$color-txt-gray;
   }
 
   &__item{

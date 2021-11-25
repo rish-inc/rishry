@@ -1,10 +1,12 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .contact{
 
   .c-heading--lv3{
     font-size: 1.6rem;
     margin-bottom: 10px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       font-size: 2rem;
       margin-bottom: 25px;
     }
@@ -13,7 +15,7 @@
   &__bottom{
     margin-top: 30px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin-top: 60px;
     }
 
@@ -21,7 +23,7 @@
       span{
         font-size: 1.5rem;
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
           font-size: 1.8rem;
         }
       }
@@ -29,7 +31,7 @@
   }
 
   &__error{
-    color: $color-txt-pink;
+    color: variable.$color-txt-pink;
     font-size: 1.4rem;
     margin-top: 10px;
   }

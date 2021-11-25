@@ -1,28 +1,8 @@
-@charset "UTF-8";
-// @import "./mixin";
-// @import "./variables";
-// @import "./common/header";
-// @import "./common/footer";
-// @import "_index__mainvisual.scss";
-// @import "_suggestion.scss";
-// @import "_problem.scss";
-// @import "_point.scss";
-// @import "_results.scss";
-// @import "_solution.scss";
-// @import "_common.scss";
-// @import "./common/utility";
+@forward "foundation/reset.scss";
+@forward "foundation/mixin.scss";
+@forward "foundation/variable.scss";
+@forward "foundation/base.scss";
+@forward "foundation/slick.scss";
 
-// @import "./foundation/_reset.scss";
-// @import "./foundation/_mixin.scss";
-// @import "./foundation/_base.scss";
-
-@import "./foundation/_reset.scss";
-@import "./foundation/_mixin.scss";
-@import "./foundation/_base.scss";
-@import "./foundation/_slick.scss";
-
-@import "./layout/**";
-@import "./object/**";
-
-
-
+@forward "layout/**/*";
+@forward "object/**/*";

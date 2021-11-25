@@ -1,3 +1,5 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .filter{
   position: fixed;
   top: 0;
@@ -12,7 +14,7 @@
   opacity: 0;
   pointer-events: none;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     display: block;
     position: static;
     opacity: 1;
@@ -32,7 +34,7 @@
     height: 100%;
     padding: 20px 15px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       overflow: visible;
       height: auto;
       background-color: transparent;
@@ -52,10 +54,10 @@
   }
 
   &__links{
-    border-top: 1px solid $color-gray;
+    border-top: 1px solid variable.$color-gray;
 
     li{
-      border-bottom: 1px solid $color-gray;
+      border-bottom: 1px solid variable.$color-gray;
     }
 
     a{
@@ -64,11 +66,11 @@
       font-size: 1.6rem;
       position: relative;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         transition: background-color 0.3s;
 
         &:hover{
-          background-color: $color-pink;
+          background-color: variable.$color-pink;
         }
       }
 
@@ -77,8 +79,8 @@
         display: block;
         width: 10px;
         height: 10px;
-        border-bottom: 1px solid $color-gray;
-        border-right: 1px solid $color-gray;
+        border-bottom: 1px solid variable.$color-gray;
+        border-right: 1px solid variable.$color-gray;
         transform: rotate(-45deg);
         position: absolute;
         top: 50%;
@@ -106,8 +108,8 @@
             display: block;
             width: 14px;
             height: 8px;
-            border-left: 2px solid $color-txt-pink;
-            border-bottom: 2px solid $color-txt-pink;
+            border-left: 2px solid variable.$color-txt-pink;
+            border-bottom: 2px solid variable.$color-txt-pink;
             transform: rotate(-45deg);
             position: absolute;
             top: 1px;
@@ -123,7 +125,7 @@
       position: relative;
       padding: 0 0 0 20px;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         padding: 0 0 0 25px;
       }
 
@@ -133,7 +135,7 @@
         width: 16px;
         height: 16px;
         background-color: #fff;
-        border: 1px solid $color-gray;
+        border: 1px solid variable.$color-gray;
         border-radius: 4px;
         position: absolute;
         top: 0;

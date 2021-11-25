@@ -67,7 +67,7 @@
       <p class="detail-main__price"><span>{{ current_variant.price | money }}</span><span>（税込）</span></p>
       <p class="detail-main__text">{{ product.description }}</p>
 
-      <form action="/cart/add" method="post">
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
         <div class="detail-main__btns">
           <button class="c-button is-center" type="submit" name="add" id="AddToCart" data-add-to-cart>
             <span>add cart</span>

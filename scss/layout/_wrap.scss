@@ -1,5 +1,7 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .l-wrap{
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     min-width: 1060px;
   }
 }

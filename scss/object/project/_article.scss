@@ -1,3 +1,5 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .article{
 
   &__main{
@@ -5,7 +7,7 @@
     * + *{
       margin-top: 20px;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         margin-top: 40px;
       }
     }
@@ -14,12 +16,12 @@
       font-size: 1.6rem;
       line-height: 1.4;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         line-height: 1.8;
       }
 
       a{
-        color: $color-txt-pink;
+        color: variable.$color-txt-pink;
         text-decoration: underline;
       }
     }
@@ -46,10 +48,10 @@
       font-weight: 500;
       font-size: 2rem;
       line-height: 1.4;
-      border-bottom: 3px solid $color-pink-d;
+      border-bottom: 3px solid variable.$color-pink-d;
       padding: 5px 0;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         font-size: 2.4rem;
         border-bottom-width: 5px;
         padding: 0 0 10px;
@@ -61,10 +63,10 @@
       font-weight: 500;
       font-size: 1.8rem;
       line-height: 1.4;
-      border-left: 3px solid $color-pink-d;
+      border-left: 3px solid variable.$color-pink-d;
       padding: 3px 5px;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         font-size: 2rem;
         border-left-width: 5px;
         padding: 5px 10px;
@@ -77,7 +79,7 @@
       font-size: 1.6rem;
       line-height: 1.4;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         font-size: 2rem;
         margin-bottom: -20px;
       }
@@ -85,11 +87,11 @@
   }
 
   &__bottom{
-    border-top: 1px solid $color-gray;
+    border-top: 1px solid variable.$color-gray;
     margin: 30px 0 0;
     padding: 30px 0 0;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin: 60px 0 0;
       padding: 60px 0 0;
     }
@@ -101,7 +103,7 @@
       span{
         font-size: 1.6rem;
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
           font-size: 1.8rem;
         }
       }
@@ -112,16 +114,16 @@
 
 // .cart{
 
-//   @include breakpoint(pc){
+//   @include mixin.breakpoint(pc){
 //     display: flex;
 //     align-items: flex-start;
 //   }
 
 //   &__main{
-//     border: 1px solid $color-gray;
+//     border: 1px solid variable.$color-gray;
 //     padding: 30px 20px;
 
-//     @include breakpoint(pc){
+//     @include mixin.breakpoint(pc){
 //       width: calc(100% - 400px);
 //       border: none;
 //       padding: 0 35px 0 0;
@@ -130,11 +132,11 @@
 
 //   &__side{
 //     position: relative;
-//     border: 1px solid $color-gray;
+//     border: 1px solid variable.$color-gray;
 //     padding: 30px 20px;
 //     margin-top: 65px;
 
-//     @include breakpoint(pc){
+//     @include mixin.breakpoint(pc){
 //       width: 400px;
 //       margin-top: 0;
 //       padding: 30px 40px 40px;
@@ -144,13 +146,13 @@
 //       display: block;
 //       width: 100px;
 //       height: 1px;
-//       background-color: $color-gray;
+//       background-color: variable.$color-gray;
 //       position: absolute;
 //       top: -50px;
 //       left: 50%;
 //       margin-left: -50px;
 
-//       @include breakpoint(pc){
+//       @include mixin.breakpoint(pc){
 //         display: none;
 //       }
 
@@ -159,7 +161,7 @@
 //         display: block;
 //         width: 60px;
 //         height: 1px;
-//         background-color: $color-gray;
+//         background-color: variable.$color-gray;
 //         position: absolute;
 //         top: 0px;
 //         left: 50%;
@@ -173,7 +175,7 @@
 //         display: block;
 //         width: 60px;
 //         height: 1px;
-//         background-color: $color-gray;
+//         background-color: variable.$color-gray;
 //         position: absolute;
 //         top: 0px;
 //         left: 50%;
@@ -188,7 +190,7 @@
 //       display: block;
 //       width: 100px;
 //       height: 30px;
-//       border-top: 30px solid $color-pink;
+//       border-top: 30px solid variable.$color-pink;
 //       border-left: 50px solid transparent;
 //       border-right: 50px solid transparent;
 //       position: absolute;
@@ -196,7 +198,7 @@
 //       left: 50%;
 //       margin-left: -50px;
 
-//       @include breakpoint(pc){
+//       @include mixin.breakpoint(pc){
 //         display: none;
 //       }
 //     }
@@ -212,18 +214,18 @@
 //       width: 50%;
 //       text-align: left;
 //       font-weight: normal;
-//       border-top: 1px dashed $color-gray;
+//       border-top: 1px dashed variable.$color-gray;
 //       padding: 15px 0;
 //     }
 
 //     dd{
 //       width: 50%;
 //       text-align: right;
-//       border-top: 1px dashed $color-gray;
+//       border-top: 1px dashed variable.$color-gray;
 //       padding: 15px 0;
 
 //       &.is-pink{
-//         color: $color-txt-pink;
+//         color: variable.$color-txt-pink;
 //       }
 //     }
 //   }
@@ -244,9 +246,9 @@
 
 //     & + .cart-list__item{
 //       padding-top: 20px;
-//       border-top: 1px solid $color-gray;
+//       border-top: 1px solid variable.$color-gray;
 
-//       @include breakpoint(pc){
+//       @include mixin.breakpoint(pc){
 //         padding-top: 30px;
 //       }
 //     }
@@ -255,7 +257,7 @@
 //   &__img{
 //     width: 100px;
 
-//     @include breakpoint(pc){
+//     @include mixin.breakpoint(pc){
 //       width: 150px;
 //     }
 
@@ -269,7 +271,7 @@
 //     width: calc(100% - 100px);
 //     padding: 0 0 0 15px;
 
-//     @include breakpoint(pc){
+//     @include mixin.breakpoint(pc){
 //       width: calc(100% - 150px);
 //       padding: 0 0 0 30px;
 //     }
@@ -285,7 +287,7 @@
 //     font-size: 1.4rem;
 //     line-height: 1.6;
 
-//     @include breakpoint(pc){
+//     @include mixin.breakpoint(pc){
 //       margin-top: 15px;
 //     }
 //   }
@@ -294,7 +296,7 @@
 //     font-size: 1.8rem;
 //     margin-top: 10px;
 
-//     @include breakpoint(pc){
+//     @include mixin.breakpoint(pc){
 //       margin-top: 15px;
 //     }
 //   }
@@ -305,9 +307,9 @@
 //     right: 0;
 //     font-size: 1.4rem;
 //     text-decoration: underline;
-//     color: $color-txt-gray;
+//     color: variable.$color-txt-gray;
 
-//     @include breakpoint(pc){
+//     @include mixin.breakpoint(pc){
 //       bottom: auto;
 //       top: 50%;
 //       margin-top: -0.5em;

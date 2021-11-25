@@ -1,0 +1,24 @@
+{% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+  {% assign pagetitle = product.title %}
+{% endunless %}
+{% if template contains 'page' %}
+  {% assign pagetitle = page.title %}
+{% elsif template contains 'cart' %}
+  {% assign pagetitle = 'カート' %}
+{% endif %}
+<nav class="c-breadcrumb">
+  <ul class="c-breadcrumb__list">
+    {% assign menu = linklists.brand-menu %}
+    <li class="c-breadcrumb__item"><a href="/">TOP </a></li>
+      {% for link in menu.links %}
+        {% if link.active or link.child_active %} <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href={{link.url}}> > {{ link.title }}</a></li> {% endif %}
+        {% for sub_link in link.links %}
+          {% if sub_link.active or sub_link.child_active %}> <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href={{sub_link.url}} > {{ sub_link.title }}</a></li> {% endif %}
+          {% for sub_sub_link in sub_link.links %}
+            {% if sub_sub_link.active %} > <li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href={{sub_sub_link.url}} > {{ sub_sub_link.title }}</a></li> {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+    <li class="c-breadcrumb__item"><span class="c-breadcrumb__text">{{ pagetitle }}</span></li>
+  </ul>
+  </nav>

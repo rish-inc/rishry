@@ -1,5 +1,7 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .detail{
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     display: flex;
     padding: 40px 0 0;
   }
@@ -8,7 +10,7 @@
 .detail-mv{
   margin-bottom: 30px;
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     width: 510px;
     margin: 0;
   }
@@ -16,7 +18,7 @@
   &__slider{
     margin: 0 -20px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin: 0 0 20px;
     }
 
@@ -39,9 +41,9 @@
         display: block;
         width: 10px;
         height: 10px;
-        border-bottom: 2px solid $color-pink;
+        border-bottom: 2px solid variable.$color-pink;
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
           width: 15px;
           height: 15px;
           border-bottom-width: 3px;
@@ -54,10 +56,10 @@
       border-radius: 0 10px 10px 0;
 
       &::before{
-        border-left: 2px solid $color-pink;
+        border-left: 2px solid variable.$color-pink;
         transform: rotate(45deg);
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
           border-left-width: 3px;
         }
       }
@@ -68,10 +70,10 @@
       border-radius: 10px 0 0 10px;
 
       &::before{
-        border-right: 2px solid $color-pink;
+        border-right: 2px solid variable.$color-pink;
         transform: rotate(-45deg);
 
-        @include breakpoint(pc){
+        @include mixin.breakpoint(pc){
           border-right-width: 3px;
         }
       }
@@ -83,7 +85,7 @@
   &__thumbs{
     display: none;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: flex;
       flex-wrap: wrap;
       margin: 0 -6px -12px;
@@ -110,7 +112,7 @@
 
 .detail-main{
 
-  @include breakpoint(pc){
+  @include mixin.breakpoint(pc){
     width: calc(100% - 510px);
     margin: 0;
     padding: 0 0 0 40px;
@@ -126,17 +128,17 @@
   .c-heading--lv1{
     margin: 0 0 10px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       font-size: 2.4rem;
     }
   }
 
   &__id{
-    color: $color-txt-gray;
+    color: variable.$color-txt-gray;
     font-size: 1.2rem;
     margin: 0 0 10px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin: 0 0 15px;
     }
   }
@@ -147,7 +149,7 @@
     span:nth-of-type(1){
       font-size: 2.6rem;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         font-size: 2.8rem;
       }
     }
@@ -155,7 +157,7 @@
     span:nth-of-type(2){
       font-size: 1.6rem;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         font-size: 1.8rem;
       }
     }
@@ -169,7 +171,7 @@
   &__btns{
     margin: 40px 0;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin: 60px 0;
     }
 
@@ -188,14 +190,14 @@
   &__info{
     margin: 40px 0;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       margin: 60px 0;
     }
 
     & + .detail-main__info{
       margin-top: -10px;
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         margin-top: -20px;
       }
     }

@@ -1,8 +1,10 @@
+@use "foundation/mixin";
+@use "foundation/variable";
 .c-faq{
-  border-top: 1px solid $color-gray;
+  border-top: 1px solid variable.$color-gray;
 
   &__item{
-    border-bottom: 1px solid $color-gray;
+    border-bottom: 1px solid variable.$color-gray;
   }
 
   &__ttl{
@@ -12,7 +14,7 @@
     position: relative;
     line-height: 1.4;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       padding: 20px;
     }
 
@@ -28,14 +30,14 @@
       display: block;
       width: 10px;
       height: 10px;
-      border-left: 1px solid $color-gray;
-      border-bottom: 1px solid $color-gray;
+      border-left: 1px solid variable.$color-gray;
+      border-bottom: 1px solid variable.$color-gray;
       position: absolute;
       top: 18px;
       right: 10px;
       transform: rotate(-45deg);
 
-      @include breakpoint(pc){
+      @include mixin.breakpoint(pc){
         display: none;
       }
     }
@@ -45,7 +47,7 @@
     display: none;
     padding: 0 10px 15px;
 
-    @include breakpoint(pc){
+    @include mixin.breakpoint(pc){
       display: block;
       padding: 0 20px 30px;
     }
@@ -60,7 +62,7 @@
 // .c-breadcrumb{
 //   display: none;
 
-//   @include breakpoint(pc){
+//   @include mixin.breakpoint(pc){
 //     display: block;
 //     margin-top: 10px;
 //   }
@@ -68,7 +70,7 @@
 //   &__list{
 //     display: flex;
 //     font-size: 1.4rem;
-//     color: $color-txt-gray;
+//     color: variable.$color-txt-gray;
 //   }
 
 //   &__item{

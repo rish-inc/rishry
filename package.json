@@ -17,18 +17,26 @@
   },
   "homepage": "https://github.com/rish-inc/rishry#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.27.7",
     "css-mqpacker": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
-    "gulp-notify": "^3.2.0",
+    "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-pug": "^4.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "postcss-cssnext": "^3.1.0"
+  },
+  "dependencies": {
+    "gulp-cached": "^1.1.1",
+    "gulp-sass-glob-use-forward": "^0.1.3",
+    "minimist": "^1.2.5",
+    "ncu": "^0.2.1",
+    "npm-check-updates": "^11.8.5",
+    "sass": "^1.43.4"
   }
 }
