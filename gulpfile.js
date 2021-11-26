@@ -111,11 +111,11 @@ const compileScssShopify = () => {
   // .pipe(postcss([mqpacker()])) // メディアクエリを圧縮
   .pipe(postcss([cssnext(browsers)]))//cssnext
   // .pipe(sourcemaps.write('/maps'))  //ソースマップの出力
-  .pipe(rename({
-    extname: '.css.liquid'
-  }))
+  // .pipe(rename({
+  //   extname: '.css.liquid'
+  // }))
   // .pipe( gulp.dest( 'theme/assets/' ) );
-  .pipe(dest(destPath.css))         //コンパイル先
+  .pipe(dest('./' + destPath.css))         //コンパイル先
   // .pipe(cleanCSS()) // CSS圧縮
 }
 

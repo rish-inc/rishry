@@ -12,21 +12,25 @@
   }
 
   &__item{
-
+    padding: 10px 0;
+    position: relative;
+    font-size: 1.6rem;
+    @include mixin.breakpoint(pc){
+      padding: 0;
+    }
     & + .l-navi__item{
       border-top: 1px solid variable.$color-gray;
-
+      
       @include mixin.breakpoint(pc){
         border-top: none;
         margin-left: 15px;
+        cursor: pointer;
       }
     }
   }
 
   &__link{
     display: block;
-    font-size: 1.6rem;
-    padding: 20px;
 
     @include mixin.breakpoint(pc){
       padding: 0;
@@ -52,6 +56,41 @@
     a{
       margin: 0 10px;
       font-size: 1.4rem;
+    }
+  }
+}
+
+.l-navi-sub {
+  &__list {
+    @include mixin.breakpoint(pc){
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom: 1px solid #999;
+      padding-top: 30px;
+      display: none;
+    }
+    &__item {
+      margin: 12px 0 0 12px;
+      @include mixin.breakpoint(pc){
+        width: 100%;
+        margin: 0;
+        background-color: variable.$color-pink;
+        border-top: 1px solid #999;
+      }
+    }
+    &__link {
+      @include mixin.breakpoint(pc){
+        width: 100%;
+        padding: 10px;
+        display: block;
+      }
+      &:hover {
+        @include mixin.breakpoint(pc){
+          background-color: variable.$color-pink-d;
+        }
+      }
     }
   }
 }
