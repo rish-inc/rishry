@@ -78,6 +78,7 @@
 {%- comment -%} COLLECTION HEADER {%- endcomment -%}
 <div class="boost-pfs-filter-collection-header-wrapper boost-pfs-filter-collection-image {% if section.settings.show_collection_image and collection.image %}boost-pfs-filter-collection-has-image{% endif %}" {% if section.settings.show_collection_image and collection.image %} style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});" {% endif %}>
   <div class="boost-pfs-container-default">
+  {% include 'rishry-breadcrumbs' %}
     <div class="boost-pfs-section-header">
       <h1 class="boost-pfs-filter-collection-header">
         <span role="text">

@@ -1076,6 +1076,20 @@ html {
   }
 }
 
+.js-menu__sub {
+  display: block;
+}
+@media (min-width: 769px) {
+  .js-menu__sub {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .js-menu__sub.is-active {
+    display: block;
+  }
+}
+
 @media (min-width: 769px) {
   .l-wrap {
     min-width: 1060px;
@@ -1097,7 +1111,7 @@ html {
 @media (min-width: 769px) {
   .c-breadcrumb {
     display: block;
-    margin-top: 10px;
+    padding-top: 10px;
   }
 }
 .c-breadcrumb__list {

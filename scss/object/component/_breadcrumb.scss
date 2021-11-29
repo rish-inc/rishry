@@ -5,7 +5,7 @@
 
   @include mixin.breakpoint(pc){
     display: block;
-    margin-top: 10px;
+    padding-top: 10px;
   }
 
   &__list{

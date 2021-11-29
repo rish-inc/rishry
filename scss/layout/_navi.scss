@@ -94,3 +94,15 @@
     }
   }
 }
+
+.js-menu__sub {
+  display: block;
+  @include mixin.breakpoint(pc){
+    display: none;
+  }
+  &.is-active {
+    @include mixin.breakpoint(pc){
+      display: block;
+    }
+  }
+}
