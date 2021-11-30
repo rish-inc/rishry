@@ -1,0 +1,20 @@
+<div class="top-mv">
+  <div class="top-mv__item">
+    <a class="top-mv__link" href="">
+      <img class="top-mv__img" src="{{ section.settings.mainvisual | img_url: "master" }}">
+    </a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Main Visual",
+    "settings": [
+      {
+        "type"   : "image_picker",
+        "id"     : "mainvisual",
+        "label"  : "mainvisual"
+      }
+    ]
+  }
+{% endschema %}
