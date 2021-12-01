@@ -984,7 +984,15 @@ html {
   }
 }
 .l-navi__item {
+  padding: 10px 0;
   position: relative;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+@media (min-width: 769px) {
+  .l-navi__item {
+    padding: 0;
+  }
 }
 .l-navi__item + .l-navi__item {
   border-top: 1px solid #CCC;
@@ -993,13 +1001,11 @@ html {
   .l-navi__item + .l-navi__item {
     border-top: none;
     margin-left: 15px;
+    cursor: pointer;
   }
 }
 .l-navi__link {
   display: block;
-  font-size: 16px;
-  font-size: 1.6rem;
-  padding: 20px;
 }
 @media (min-width: 769px) {
   .l-navi__link {
@@ -1036,6 +1042,55 @@ html {
 }
 
 @media (min-width: 769px) {
+  .l-navi-sub__list {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #999;
+    padding-top: 30px;
+    display: none;
+  }
+}
+.l-navi-sub__list__item {
+  margin: 12px 0 0 12px;
+}
+@media (min-width: 769px) {
+  .l-navi-sub__list__item {
+    width: 100%;
+    margin: 0;
+    background-color: #FFEDEE;
+    border-top: 1px solid #999;
+  }
+}
+@media (min-width: 769px) {
+  .l-navi-sub__list__link {
+    width: 100%;
+    padding: 10px;
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  .l-navi-sub__list__link:hover {
+    background-color: #FFDDDE;
+  }
+}
+
+.js-menu__sub {
+  display: block;
+}
+@media (min-width: 769px) {
+  .js-menu__sub {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .js-menu__sub.is-active {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
   .l-wrap {
     min-width: 1060px;
   }
@@ -1056,7 +1111,7 @@ html {
 @media (min-width: 769px) {
   .c-breadcrumb {
     display: block;
-    margin-top: 10px;
+    padding-top: 10px;
   }
 }
 .c-breadcrumb__list {
@@ -1691,6 +1746,11 @@ html {
   .article__bottom .c-button span {
     font-size: 1.8rem;
   }
+}
+
+.boost-pfs-filter-default-toolbar {
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 @media (min-width: 769px) {

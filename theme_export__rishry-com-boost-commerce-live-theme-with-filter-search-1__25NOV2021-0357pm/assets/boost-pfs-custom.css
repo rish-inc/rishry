@@ -201,7 +201,7 @@
 .boost-pfs-filter-right-col {
 	width: 77%;
 	float: right;
-	padding-left: 30px;
+	padding-left: 60px;
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -1513,6 +1513,7 @@
 .boost-pfs-search-result-toolbar {
 	margin: 0;
 	margin-bottom: -1px;
+  font-size: 1.6rem;
 }
 
 .boost-pfs-search-result-toolbar>.boost-pfs-container-default {
