@@ -1,0 +1,62 @@
+@use "foundation/mixin";
+@use "foundation/variable";
+
+.shopify-policy {
+    &__container {
+        padding: 50px 0;
+        @include mixin.breakpoint(pc){
+          max-width: 800px;
+        }
+    }
+    &__title {
+      font-size: 2.4rem;
+      margin-bottom: 60px;
+    }
+    &__body {
+      .rte {
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: bold;
+        }
+        h1 {
+          font-size: 2.4rem;
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-size: 2.2rem;
+          line-height: 3.3;
+        }
+        p,
+        li,
+        span {
+          font-size: 1.6rem;
+          line-height: 2.4;
+        }
+        ol, ul {
+          li {
+            margin: 10px 0 10px 40px;
+          }
+        }
+        ul li {
+          list-style-type: disc; 
+        }
+        ol li {
+          list-style-type: decimal; 
+        }
+        table {
+          tr {
+            td {
+              font-size: 1.4rem;
+              padding: 10px;
+              border: 1px solid variable.$color-txt-gray;
+              &:nth-child( odd ) {
+                background-color: variable.$color-pink-d;
+              }
+              &:nth-child( even ) {
+                background-color: variable.$color-pink;
+              }
+            }
+          }
+        }
+      }
+    }
+}

@@ -15,7 +15,6 @@
           <div class="l-footer__block">
             <p class="l-footer__heading">Support</p>
             <ul class="l-footer__list">
-              <li class="l-footer__item"><a class="l-footer__link" href="">ショッピングガイド</a></li>
               <li class="l-footer__item"><a class="l-footer__link" href="/pages/faq/">よくある質問</a></li>
               <li class="l-footer__item"><a class="l-footer__link" href="/pages/contact/">お問い合わせ</a></li>
             </ul>
@@ -23,10 +22,9 @@
           <div class="l-footer__block">
             <p class="l-footer__heading">Company</p>
             <ul class="l-footer__list">
-              <li class="l-footer__item"><a class="l-footer__link" href="">特定商取引法に基づく表示</a></li>
-              <li class="l-footer__item"><a class="l-footer__link" href="">古物営業法に基づく表示</a></li>
-              <li class="l-footer__item"><a class="l-footer__link" href="">プライバシーポリシー</a></li>
-              <li class="l-footer__item"><a class="l-footer__link" href="">会社概要</a></li>
+              {% for campanylink in linklists.footer.links %}
+                <li class="l-footer__item"><a class="l-footer__link" href="{{ campanylink.url }}">{{ campanylink.title }}</a></li>
+              {% endfor %}
             </ul>
           </div>
         </div>
