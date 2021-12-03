@@ -27,20 +27,40 @@
         }
         p,
         li,
-        span {
+        span,
+        div {
           font-size: 1.6rem;
           line-height: 2.4;
         }
         ol, ul {
+          margin-left: 40px;
           li {
-            margin: 10px 0 10px 40px;
+            // margin: 10px 0;
           }
         }
-        ul li {
-          list-style-type: disc; 
+        ul {
+          list-style-type: disc;
+          ul {
+            list-style-type: circle;
+            ul {
+              list-style-type: square;
+            }
+          }
         }
-        ol li {
-          list-style-type: decimal; 
+        ol {
+          list-style-type: decimal;
+          &[type="a"] {
+            list-style-type: lower-alpha;
+          }
+          &[type="A"] {
+            list-style-type: upper-alpha;
+          }
+          &[type="i"] {
+            list-style-type: lower-roman;
+          }
+          &[type="I"] {
+            list-style-type: upper-roman;
+          }
         }
         table {
           tr {
@@ -56,6 +76,9 @@
               }
             }
           }
+        }
+        img {
+          margin-bottom: 15px;
         }
       }
     }

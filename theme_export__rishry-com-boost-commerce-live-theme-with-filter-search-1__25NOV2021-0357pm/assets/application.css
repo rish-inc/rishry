@@ -2511,19 +2511,38 @@ html {
 }
 .shopify-policy__body .rte p,
 .shopify-policy__body .rte li,
-.shopify-policy__body .rte span {
+.shopify-policy__body .rte span,
+.shopify-policy__body .rte div {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 2.4;
 }
-.shopify-policy__body .rte ol li, .shopify-policy__body .rte ul li {
-  margin: 10px 0 10px 40px;
+.shopify-policy__body .rte ol, .shopify-policy__body .rte ul {
+  margin-left: 40px;
 }
-.shopify-policy__body .rte ul li {
+.shopify-policy__body .rte ul {
   list-style-type: disc;
 }
-.shopify-policy__body .rte ol li {
+.shopify-policy__body .rte ul ul {
+  list-style-type: circle;
+}
+.shopify-policy__body .rte ul ul ul {
+  list-style-type: square;
+}
+.shopify-policy__body .rte ol {
   list-style-type: decimal;
+}
+.shopify-policy__body .rte ol[type=a] {
+  list-style-type: lower-alpha;
+}
+.shopify-policy__body .rte ol[type=A] {
+  list-style-type: upper-alpha;
+}
+.shopify-policy__body .rte ol[type=i] {
+  list-style-type: lower-roman;
+}
+.shopify-policy__body .rte ol[type=I] {
+  list-style-type: upper-roman;
 }
 .shopify-policy__body .rte table tr td {
   font-size: 14px;
@@ -2536,6 +2555,9 @@ html {
 }
 .shopify-policy__body .rte table tr td:nth-child(even) {
   background-color: #FFEDEE;
+}
+.shopify-policy__body .rte img {
+  margin-bottom: 15px;
 }
 
 .top-mv, .top-mv--full {
