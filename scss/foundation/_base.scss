@@ -1,3 +1,5 @@
+@use "mixin";
+@use "variable";
 
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500&display=swap);
 
@@ -9,4 +11,12 @@ html{
 }
 
 body{
+  // display: none;
+}
+
+select {
+  padding: 10px;
+  appearance: auto;
+  background: variable.$color-gray-l;
+  border-right: 4px solid variable.$color-gray-l;
 }

@@ -24,7 +24,6 @@ const options = minimist( process.argv.slice( 2 ), {
   }
 });
 
-
 //js babel
 // const babel = require("gulp-babel");
 // const uglify = require("gulp-uglify");
@@ -49,20 +48,21 @@ const browsers = [
 
 //参照元パス
 const srcPath = {
-  pug: 'pug/**/*pug',
-  css: 'scss/**/**.scss',
-  js: 'src/js/*.js',
-  img: 'src/img/**/*',
+  rootDir: './',
+  pug    : './pug/**/*pug',
+  css    : './scss/**/**.scss',
+  js     : './src/js/*.js',
+  img    : './src/img/**/*',
 }
 
 //出力先パス
 const destPath = {
  html: 'htdocs/',
 //  css: 'theme/assets/',
- css: 'theme_export__rishry-com-boost-commerce-live-theme-with-filter-search-1__25NOV2021-0357pm/assets/',
+ css:  'theme_export__rishry-com-boost-commerce-live-theme-with-filter-search-1__17FEB2022-0301pm/assets/',
  css2: 'htdocs/assets/css/',
- js: 'dist/js/',
- img: 'dist/img/'
+ js:   'dist/js/',
+ img:  'dist/img/'
 }
 
 // const server = () => {
@@ -102,36 +102,28 @@ const compilePug = () => {
 
 //sass
 const compileScssShopify = () => {
-  return src(srcPath.css) //コンパイル元
+  return src(srcPath.css, { sourcemaps: true }) //コンパイル元
   .pipe(sassGlob())
-  // .pipe(sourcemaps.init())//gulp-sourcemapsを初期化
-  .pipe(plumber({errorHandler: notify.onError('Error:<%= error.message %>')}))
+  .pipe( sass.sync().on( 'error', sass.logError ) )
   .pipe( cached( 'scss' ) )
   .pipe(sass({ outputStyle: 'expanded' }))
   // .pipe(postcss([mqpacker()])) // メディアクエリを圧縮
   .pipe(postcss([cssnext(browsers)]))//cssnext
-  // .pipe(sourcemaps.write('/maps'))  //ソースマップの出力
-  // .pipe(rename({
-  //   extname: '.css.liquid'
-  // }))
-  // .pipe( gulp.dest( 'theme/assets/' ) );
-  .pipe(dest('./' + destPath.css))         //コンパイル先
-  // .pipe(cleanCSS()) // CSS圧縮
+  .pipe(dest('./' + destPath.css, { sourcemaps: './' + destPath.css }))         //コンパイル先
 }
 
 //sass
 const compileScss = () => {
-  return src(srcPath.css) //コンパイル元
+  return src(srcPath.css, { sourcemaps: true }) //コンパイル元
   .pipe(sassGlob())
-  // .pipe(sourcemaps.init())//gulp-sourcemapsを初期化
-  .pipe(plumber({errorHandler: notify.onError('Error:<%= error.message %>')}))
+  .pipe( sass.sync().on( 'error', sass.logError ) )
   .pipe( cached( 'scss' ) )
   .pipe(sass({ outputStyle: 'expanded' }))
   // .pipe(postcss([mqpacker()])) // メディアクエリを圧縮
   .pipe(postcss([cssnext(browsers)]))//cssnext
   .pipe( rename( { sass: true } ) )
   // .pipe(sourcemaps.write('/maps'))  //ソースマップの出力
-  .pipe(dest('./htdocs/assets/'))         //コンパイル先
+  .pipe(dest('./htdocs/assets/', { sourcemaps: './' + destPath.css }))         //コンパイル先
   // .pipe(cleanCSS()) // CSS圧縮
 }
   
@@ -141,15 +133,17 @@ const compileScss = () => {
 // }
 
 const watchFile = () => {
-  watch('./scss/**/*.scss', series( compileScssShopify, reload ) );
-  // watch('./scss/**/*.scss', series(compileScss, reload));
-  watch('./pug/**/*.pug', series(compilePug, reload));
+  watch(srcPath.css, series( compileScssShopify, reload ) );
+  // watch(srcPath.css, series(compileScss, reload));
+  watch(srcPath.pug, series(compilePug, reload));
 }
+
+exports.compileScssShopify = compileScssShopify;
 
 // ローカル開発 -> gulp
 // exports.default = parallel(compileScss, compileScssShopify, watchFile, server);
 // exports.default = parallel( compileScssShopify, watchFile, server );
-exports.default = series( compileScssShopify, watchFile, server );
+exports.default = parallel( compileScssShopify, watchFile, server );
 // exports.default = parallel( compileScss, watchFile, server );
 
 // shopify用にコンパイル -> gulp build
