@@ -59,7 +59,7 @@ const srcPath = {
 const destPath = {
  html: 'htdocs/',
 //  css: 'theme/assets/',
- css:  'theme_export__rishry-com-boost-commerce-live-theme-with-filter-search-1__17FEB2022-0301pm/assets/',
+ css:  'theme/assets/',
  css2: 'htdocs/assets/css/',
  js:   'dist/js/',
  img:  'dist/img/'
@@ -109,7 +109,7 @@ const compileScssShopify = () => {
   .pipe(sass({ outputStyle: 'expanded' }))
   // .pipe(postcss([mqpacker()])) // メディアクエリを圧縮
   .pipe(postcss([cssnext(browsers)]))//cssnext
-  .pipe(dest('./' + destPath.css, { sourcemaps: './' + destPath.css }))         //コンパイル先
+  .pipe(dest('./' + destPath.css, { sourcemaps: './' }))         //コンパイル先
 }
 
 //sass
@@ -119,12 +119,9 @@ const compileScss = () => {
   .pipe( sass.sync().on( 'error', sass.logError ) )
   .pipe( cached( 'scss' ) )
   .pipe(sass({ outputStyle: 'expanded' }))
-  // .pipe(postcss([mqpacker()])) // メディアクエリを圧縮
   .pipe(postcss([cssnext(browsers)]))//cssnext
   .pipe( rename( { sass: true } ) )
-  // .pipe(sourcemaps.write('/maps'))  //ソースマップの出力
   .pipe(dest('./htdocs/assets/', { sourcemaps: './' + destPath.css }))         //コンパイル先
-  // .pipe(cleanCSS()) // CSS圧縮
 }
   
 // const watchFile2 = () => {
