@@ -1,3 +1,4 @@
+<!-- /templates/customers/register.liquid -->
 <div class="c-contents">
   <div class="c-breadcrumb">
     <ul class="c-breadcrumb__list">
@@ -16,20 +17,20 @@
 
       <div class="c-block">
         <label class="c-heading--lv3" for="FirstName">姓</label>
-        <input class="c-input--text" type="text" placeholder="山田" id="ContactFormFirstName" name="customer[first_name]">
+        <input class="c-input--text" type="text" placeholder="山田" id="FirstName" name="customer[first_name]">
       </div>
       <div class="c-block">
-        <h2 class="c-heading--lv3">名</h2>
-        <input class="c-input--text" type="text" placeholder="太郎" id="ContactFormLastName" name="customer[last_name]">
+        <label class="c-heading--lv3" for="LastName">名</label>
+        <input class="c-input--text" type="text" placeholder="太郎" id="LastName" name="customer[last_name]">
       </div>
       <div class="c-block">
-        <h2 class="c-heading--lv3">メールアドレス</h2>
-        <input class="c-input--text" placeholder="contact@rishry.com" type="email" id="ContactFormEmail" name="customer[email]">
+        <label class="c-heading--lv3" for="Email">メールアドレス</label>
+        <input class="{% if form.errors contains 'email' %} input--error{% endif %} c-input--text" placeholder="contact@rishry.com" type="email" id="Email" name="customer[email]">
         <!-- <p class="contact__error">入力してください</p> -->
       </div>
       <div class="c-block">
-        <h2 class="c-heading--lv3">パスワード</h2>
-        <input type="password" name="customer[password]" id="CreatePassword" class="c-input--text" placeholder="{{ 'customer.register.password' | t }}">
+        <label class="c-heading--lv3" for="CreatePassword">パスワード</label>
+        <input type="password" name="customer[password]" id="CreatePassword" class="{% if form.errors contains 'password' %} input--error{% endif %} c-input--text" placeholder="パスワードを入力">
         <!-- <p class="contact__error">入力してください</p> -->
       </div>
 
